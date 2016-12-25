@@ -1,4 +1,4 @@
-# Google Test using CMake -- example
+# Google Test using CMake -- example [![Build Status](https://travis-ci.org/dubzzz/gtest-using-cmake-example.svg?branch=master)](https://travis-ci.org/dubzzz/gtest-using-cmake-example)[![Build status](https://ci.appveyor.com/api/projects/status/c84nnf4o27a7jsjf/branch/master?svg=true)](https://ci.appveyor.com/project/dubzzz/gtest-using-cmake-example/branch/master)
 
 This repository provides a very simple example of how defining a CMakeLists.txt in order to run unit-tests using Google Test framework.
 
