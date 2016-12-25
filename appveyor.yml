@@ -1,0 +1,28 @@
+version: 1.0.{build}
+os: Visual Studio 2015
+
+environment:
+  matrix:
+  - ARCH: amd64
+  - ARCH: x86
+
+install:
+- set ORIGIN_PATH=%cd%
+- git submodule update --init --recursive
+- cd ..
+- git clone https://github.com/google/googletest.git
+- cd googletest
+- cmake -G "Visual Studio 14 2015" .
+- cmake --build .
+- mkdir googletest\lib
+- copy googlemock\gtest\%BUILD_TYPE%\gtest.lib googletest\lib
+- copy googlemock\gtest\%BUILD_TYPE%\gtest_main.lib googletest\lib
+- set GTEST_ROOT=%cd%\googletest
+- cd %ORIGIN_PATH%
+
+build_script:
+- cmake -DCMAKE_BUILD_TYPE=%BUILD_TYPE% -G "Visual Studio 14 2015" .
+- cmake --build .
+
+test_script:
+- ctest -VV
