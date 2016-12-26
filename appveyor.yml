@@ -17,7 +17,6 @@ install:
 - devenv.exe googletest\msvc\gtest-md.sln /Upgrade
 - devenv.exe googletest\msvc\gtest-md.sln /Build
 - mkdir googletest\lib
-- dir /S googletest\msvc
 - copy googletest\msvc\gtest-md\Debug\gtestd.lib googletest\lib\gtest.lib
 - copy googletest\msvc\gtest-md\Debug\gtest_main-mdd.lib googletest\lib\gtest_main.lib
 - set GTEST_ROOT=%cd%\googletest
