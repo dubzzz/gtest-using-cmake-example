@@ -9,12 +9,13 @@ environment:
 install:
 - set BUILD_TYPE=Debug
 - set ORIGIN_PATH=%cd%
+- set PATH=%PATH%;c:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\
 - git submodule update --init --recursive
 - cd ..
 - git clone https://github.com/google/googletest.git
 - cd googletest
 - cmake -DCMAKE_BUILD_TYPE=%BUILD_TYPE% -G "Visual Studio 14 2015" .
-- "c:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\devenv.exe" googletest\msvc\gtest-md.sln /Upgrade
+- devenv.exe googletest\msvc\gtest-md.sln /Upgrade
 - cmake --build . --target googletest/msvc/gtest-md
 - cmake --build . --target googletest/msvc/gtest_main-md
 - mkdir googletest\lib
