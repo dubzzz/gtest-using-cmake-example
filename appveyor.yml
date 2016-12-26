@@ -15,8 +15,7 @@ install:
 - cd googletest
 - cmake -G "Visual Studio 14 2015" .
 - devenv.exe googletest\msvc\gtest-md.sln /Upgrade
-- cmake --build . --target googletest\msvc\gtest-md
-- cmake --build . --target googletest\msvc\gtest_main-md
+- devenv.exe googletest\msvc\gtest-md.sln /Build
 - mkdir googletest\lib
 - dir /S googletest\msvc
 - copy googletest\msvc\gtest-md\Debug\gtestd.lib googletest\lib\gtest.lib
