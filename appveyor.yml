@@ -27,4 +27,4 @@ build_script:
 - cmake --build .
 
 test_script:
-- devenv.exe RUN_TESTS.vcxproj /Run
+- ctest -C Debug -VV
