@@ -16,7 +16,13 @@ endif()
 enable_testing()
 include_directories(SYSTEM ${GTEST_INCLUDE_DIRS})
 
-file(GLOB SRCS *.cpp)
+file(GLOB SRCS main.cpp)
 add_executable(mytest ${SRCS})
 target_link_libraries(mytest ${GTEST_BOTH_LIBRARIES})
 add_test(NAME mytest COMMAND mytest)
+
+# Various STL tests/snippets
+file(GLOB SRCS main_pushback.cpp)
+add_executable(mytest_pushback ${SRCS})
+target_link_libraries(mytest_pushback ${GTEST_BOTH_LIBRARIES})
+add_test(NAME mytest_pushback COMMAND mytest_pushback)
