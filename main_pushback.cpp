@@ -8,10 +8,10 @@
 std::vector<int> pushback_failure(unsigned size)
 {
   std::vector<int> vs(size);
-  std::iota(std::begin(vs), std::end(vs), 0);
+  std::iota(vs.begin(), vs.end(), 0);
   
   vs.reserve(2 * size);
-  std::copy(std::rbegin(vs), std::rend(vs), std::back_inserter(vs));
+  std::copy(vs.rbegin(), vs.rend(), std::back_inserter(vs));
   return vs;
 }
 
