@@ -29,8 +29,12 @@ std::vector<int> pushback_ok(unsigned size)
 
 TEST(TEST_NAME, SpecificNumberOfValuesFailure)
 {
+#ifdef _MSC_VER
+  ASSERT_DEATH(pushback_failure(3), "Should crash under when using Visual Studio");
+#else
   std::vector<int> expected = { 0, 1, 2, 2, 1, 0 };
   ASSERT_EQ(expected, pushback_failure(3));
+#endif
 }
 
 TEST(TEST_NAME, SpecificNumberOfValuesOk)
